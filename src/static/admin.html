@@ -16,16 +16,16 @@
       const PostPreview = createClass({
         render: function () {
           const { entry, widgetFor } = this.props;
-          const image = entry.getIn(["data", "cover"]);
+          const image = entry.data.cover;
           let imageMarkup = "";
           if (image) {
             imageMarkup = html`<div><img src="${image.toString()}" /></div>`;
           }
           return html`
             <div>
-              <h1 className="blogTitle">${entry.getIn(["data", "title"])}</h1>
+              <h1 className="blogTitle">${entry.data.title}</h1>
               <caption className="blogSubTitle">
-                ${entry.getIn(["data", "subtitle"])}
+                ${entry.data.subtitle}
               </caption>
               ${imageMarkup}
               <div className="text">${widgetFor("body")}</div>
