@@ -16,8 +16,8 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 18.x
-        cache: 'npm'
-    - run: yarn && yarn build --if-present
+        cache: 'yarn'
+    - run: yarn && yarn build
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
       with:
